@@ -2,7 +2,7 @@
 <div>
   <article v-for="article in articles">
     <h1>
-              <a v-link="" v-text="article.title"></a>
+    <router-link :to="{name:'essay',params:{id:article._id}}"> <a  v-text="article.title"></a></router-link>            
     </h1>
     <div class="pre-content">
       <p >
