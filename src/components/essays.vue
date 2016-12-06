@@ -11,7 +11,7 @@
       <img :src='article.img'>
     </div>
     <p class="read-all">
-      <a href="javascript:void()">继续阅读 »</a>
+      <router-link :to="{name:'essay',params:{id:article._id}}"><a href="javascript:void()">继续阅读 »</a></router-link>
       <span v-text="article.date"><i></i></span>
     </p>
   </article>
