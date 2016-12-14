@@ -1,24 +1,15 @@
 import Vue from 'vue'
-import VueRouter from 'vue-router'
-import VueResource from 'vue-resource'
-import routes from './routes'
+import router from './router'
 import { sync } from 'vuex-router-sync'
 import store from './store'
-Vue.use(VueRouter)
-Vue.use(VueResource)
-const router = new VueRouter({
-        routes,
-        history: true,
-        saveScrollPosition: true,
-        suppressTransitionError: true
-    })
-    // 处理由于刷新页面vuex丢失数据的问题
-    // 记录分页
+import mock from './server';
 if (window.sessionStorage.page) {
     store.dispatch('setPage', window.sessionStorage.page)
 }
 sync(store, router)
-new Vue({
-    router,
-    store
-}).$mount('#app')
+const app = new Vue({
+        router,
+        store
+    }).$mount('#app')
+    // 输出实例方便服务端渲染 以及action调用用于实例跳转
+export { app, router, store }

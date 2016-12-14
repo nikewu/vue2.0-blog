@@ -8,4 +8,3 @@ export const SET_TOTAL = 'SET_TOTAL'
 export const LOADING = 'LOADING'
     // ESSAY
 export const SET_ESSAY = 'SET_ESSAY'
-export const SET_ESSAY_FAIL = 'SET_ESSAY_FAIL'

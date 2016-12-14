@@ -12,8 +12,7 @@
     export default {
         computed: {
             ...mapGetters({
-                essay: 'getEssay',
-                status: 'getStatus'
+                essay: 'getEssay'
             })
         },
         methods: {
@@ -23,9 +22,6 @@
         },
         created() {
             this.$store.dispatch('setEssay', this.$route.params.id)
-        },
-        beforeUpdate() {
-            console.log(this.status)
         }
     }
 </script>
