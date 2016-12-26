@@ -3,9 +3,6 @@ import api from '../api'
 // 这里引入router实例用于页面跳转 注意引入方式
 import { router } from '../main'
 import { API_ROOT } from '../config'
-import Vue from 'vue'
-import Mock from 'mockjs'
-var Random = Mock.Random
 export const setPage = function({ commit }, page) {
     commit(types.SET_PAGE, page)
 }
